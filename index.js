@@ -11,8 +11,7 @@ app.get('/', (req, res) => {
   }
 
   axios.get(req.query.url).then(resp => {
-    console.log('resp', resp.data);
-    res.send(resp.data)
+    res.status(resp.status).send(resp.data);
   });
 })
 
